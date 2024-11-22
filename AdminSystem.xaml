@@ -1,0 +1,47 @@
+<Page x:Class="CMCS.AdminSystem"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Admin System" Height="450" Width="800">
+    <Grid Margin="20">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <TextBlock Text="Claims Administration" 
+                           FontSize="24" FontWeight="Bold" 
+                           Margin="0,0,0,20" 
+                           HorizontalAlignment="Center"/>
+                <TextBlock Text="Pending Claims:" FontSize="16" Margin="0,0,0,5"/>
+                <ListBox Name="ClaimsListBox" 
+                         Margin="0,0,0,20" 
+                         Height="200" 
+                         VerticalAlignment="Stretch" 
+                         HorizontalAlignment="Stretch" 
+                         SelectionChanged="ClaimsListBox_SelectionChanged">
+                </ListBox>
+                <StackPanel Orientation="Horizontal" 
+                          HorizontalAlignment="Center" 
+                          Margin="0,10,0,10">
+                    <Button Content="Approve Claim" 
+                            Width="120" 
+                            Margin="0,0,10,0"
+                            Click="ApproveButton_Click"/>
+                    <Button Content="Reject Claim" 
+                            Width="120" 
+                            Margin="10,0,0,0"
+                            Click="RejectButton_Click"/>
+                    <Button Content="Download File" 
+                            Width="120" 
+                            Margin="10,0,0,0"
+                            Name="DownloadButton"
+                            Click="DownloadButton_Click"/>
+                </StackPanel>
+                <TextBlock Text="Claim Status History:" FontSize="16" Margin="0,20,0,5"/>
+                <ListBox Name="StatusHistoryListBox" 
+                         Height="100" 
+                         Margin="0,0,0,20"/>
+                <TextBlock Name="FileInfoText" 
+                          Margin="0,10,0,0" 
+                          TextWrapping="Wrap"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
